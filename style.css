@@ -1,0 +1,446 @@
+/* 1. Basic Reset to remove default margins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 2. Body styling: Sunny Ocean Gradient */
+body {
+  background-image: linear-gradient(to bottom, #87ceeb 0%, #00bfff 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Centers container horizontally */
+  align-items: center; /* Centers container vertically */
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: background-image 2s ease-in-out;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.container {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Subtle transparent background */
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
+  /* Responsive limits */
+  width: 90%;
+  max-width: 600px; /* Limits width on huge screens */
+  min-width: 320px; /* Prevents breaking on tiny devices */
+
+  /* Internal layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 3. Title Styling */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+/* 4. Score Styling */
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+  color: #f0f8ff;
+}
+
+/* 5. Button Styling: Pop Theme */
+#clickBtn {
+  padding: 25px 60px;
+  font-size: 2rem;
+  background-color: #4eb5d4;
+  color: white;
+  border: 3px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition:
+    transform 0.1s,
+    background-color 0.2s;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Button hover and click effects */
+#clickBtn:hover {
+  background-color: #61d9fd;
+}
+
+#clickBtn:active {
+  transform: scale(0.95);
+}
+
+#upgradeBtn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  background-color: #0077be;
+  color: white;
+  border: 2px solid #87ceeb;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#upgradeBtn:hover {
+  background-color: #00bfff;
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 7. Auto-Popper Button Styling */
+#autoClickBtn {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #2e8b57; /* Sea Green */
+  color: white;
+  border: 2px solid #98fb98; /* Pale Green border */
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Auto-Popper Hover State */
+#autoClickBtn:hover {
+  background-color: #3cb371; /* Lighter Green */
+  box-shadow: 0 0 15px #98fb98; /* Glowing effect */
+  transform: translateY(-2px);
+}
+
+.upgrade-container {
+  width: 350px;
+  height: 180px;
+  overflow-y: auto;
+
+  /* 1. Background & Border */
+  background: rgba(0, 119, 190, 0.2); /* Deep blue tint */
+  border: 3px solid transparent;
+  /* Gradient Border technique */
+  border-image: linear-gradient(to bottom, #00bfff, #0077be, #87ceeb) 1;
+  border-radius: 15px;
+
+  /* 2. Glow Effects */
+  box-shadow:
+    0 0 15px rgba(0, 119, 190, 0.5),
+    /* Outer glow */ inset 0 0 10px rgba(255, 255, 255, 0.3); /* Inner shine */
+
+  padding: 20px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  /* Smooth transition for any changes */
+  transition: all 0.3s ease;
+}
+
+/* 3. Sleeker Scrollbar */
+.upgrade-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.upgrade-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.upgrade-container::-webkit-scrollbar-thumb {
+  background: #00bfff; /* Bright blue scrollbar */
+  border-radius: 10px;
+}
+
+.upgrade-container::-webkit-scrollbar-thumb:hover {
+  background: #61d9fd;
+}
+
+#upgradeBtn {
+  background-color: #0077be;
+  color: white;
+}
+
+#autoClickBtn {
+  background-color: #2e8b57; /* Sea Green */
+  color: white;
+}
+
+/* 8. Prestige Button Styling */
+#prestigeBtn {
+  margin-top: 10px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #ffd700; /* Gold */
+  color: #333;
+  border: 2px solid #daa520; /* Darker Gold border */
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-shadow: none; /* Make text sharper on gold */
+}
+
+/* Prestige Hover State */
+#prestigeBtn:hover {
+  background-color: #ffec8b; /* Lighter Gold */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Prestige Display Text Styling */
+#prestigeDisplay {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffd700; /* Gold text */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#particle-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows clicking through particles */
+  z-index: 10;
+}
+
+/* The Particle Style */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  z-index: 9999;
+
+  /* Changed to animation to use GPU acceleration */
+  animation: bubbleFloatSteam 1s ease-out forwards;
+}
+
+@keyframes bubbleFloatSteam {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    /* Use var(--dx) and var(--dy) calculated in JS */
+    transform: translate(var(--dx), var(--dy)) scale(0.5);
+  }
+}
+
+/* --- ADD THIS FOR SCREEN SHAKE --- */
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.shake-animation {
+  animation: shake 0.5s;
+  animation-iteration-count: 1;
+}
+.fade-in-text {
+  animation: fadeInAnimation 1s forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Modal Container */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+}
+
+/* Modal Content Box */
+.modal-content {
+  background: linear-gradient(to bottom, #00bfff, #0077be);
+  margin: 15% auto;
+  padding: 20px;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  color: white;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 0 20px rgba(0, 119, 190, 0.8);
+  animation: modalFadeIn 0.5s;
+}
+
+@keyframes modalFadeIn {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: white;
+}
+
+/* Big button inside the modal */
+#close-modal-btn {
+  background-color: #008b8b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.prestige-area {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px dashed #00bfff;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.achievements-area {
+  margin-top: 30px;
+  padding: 15px;
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  background-color: rgba(255, 215, 0, 0.2);
+  color: white;
+  text-align: center;
+  width: 100%; /* Spans container width */
+}
+
+.achievement-unlocked {
+  color: #ffd700;
+  font-weight: bold;
+  margin: 5px 0;
+  animation: popIn 0.5s ease;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+.workshop-area {
+  margin-top: 20px;
+  padding: 15px;
+  border-top: 2px solid #ccc; /* Separator line */
+  width: 100%;
+}
+
+#loadCustomBackground {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #555; /* Neutral color for workshop */
+  color: white;
+  border: 2px solid #777;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#loadCustomBackground:hover {
+  background-color: #777;
+  transform: translateY(-2px);
+}

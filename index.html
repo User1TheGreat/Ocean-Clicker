@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ocean Clicker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="particle-container"></div>
+
+    <div class="container">
+      <h1 id="title">🌊 Ocean Clicker 🌊</h1>
+      <h3 id="scoreDisplay">Bubbles Popped: 0</h3>
+      <p id="totalBubblesDisplay">Total Bubbles Popped: 0</p>
+
+      <button id="clickBtn">POP!</button>
+
+      <div class="upgrade-container">
+        <button id="upgradeBtn">
+          Upgrade Click (<span id="costDisplay">100</span>)
+        </button>
+        <button id="autoClickBtn">Buy Auto-Popper (Cost: 200)</button>
+      </div>
+
+      <div class="prestige-area">
+        <button id="prestigeBtn">Prestige (Req: 100,000)</button>
+        <p id="prestigeDisplay">Prestige Points: 0</p>
+      </div>
+
+      <div class="achievements-area">
+        <h3>🏆 Achievements 🏆</h3>
+        <div id="achievementsList">No achievements yet!</div>
+      </div>
+
+      <div class="workshop-area">
+        <h3>🛠️ Workshop 🛠️</h3>
+        <button id="loadCustomBackground">Load Custom Theme</button>
+      </div>
+    </div>
+    <div id="offline-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>🌊 Welcome Back! 🌊</h2>
+        <p>While you were away, your Auto-Poppers worked hard.</p>
+        <div id="offline-earnings-text"></div>
+        <button id="close-modal-btn">Awesome!</button>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
