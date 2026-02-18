@@ -1,18 +1,23 @@
-/* 1. Basic Reset to remove default margins */
+@import url("https://fonts.googleapis.com/css2?family=SN+Pro:wght@400;700&display=swap");
+
+/* --- Basic Reset & Setup --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "SN Pro", sans-serif; /* Updated Font */
 }
 
-/* 2. Body styling: Sunny Ocean Gradient */
 body {
-  background-image: linear-gradient(to bottom, #87ceeb 0%, #00bfff 100%);
+  background-image: linear-gradient(
+    to bottom,
+    #001f3f 0%,
+    #000b1a 100%
+  ); /* Updated Colors */
   min-height: 100vh;
   display: flex;
-  justify-content: center; /* Centers container horizontally */
-  align-items: center; /* Centers container vertically */
+  justify-content: center;
+  align-items: center;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transition: background-image 2s ease-in-out;
@@ -23,35 +28,29 @@ body {
 }
 
 .container {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Subtle transparent background */
-  padding: 20px;
-  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.6); /* Updated Transparency */
+  backdrop-filter: blur(10px); /* Added Blur */
+  padding: 30px; /* Updated Padding */
+  border-radius: 20px; /* Updated Border Radius */
   text-align: center;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-
-  /* Responsive limits */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Updated Shadow */
+  border: 1px solid rgba(0, 191, 255, 0.3); /* Added Subtle Border */
   width: 90%;
-  max-width: 600px; /* Limits width on huge screens */
-  min-width: 320px; /* Prevents breaking on tiny devices */
-
-  /* Internal layout */
+  max-width: 600px;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* 3. Title Styling */
+
+/* --- Typography & Layout --- */
 h1 {
   font-size: 3rem;
   margin-bottom: 10px;
   letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(0, 191, 255, 0.7); /* Added Glow */
 }
 
-/* 4. Score Styling */
 h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
@@ -59,72 +58,81 @@ h3 {
   color: #f0f8ff;
 }
 
-/* 5. Button Styling: Pop Theme */
-#clickBtn {
-  padding: 25px 60px;
-  font-size: 2rem;
-  background-color: #4eb5d4;
-  color: white;
-  border: 3px solid white;
-  border-radius: 50px;
-  cursor: pointer;
-  transition:
-    transform 0.1s,
-    background-color 0.2s;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  font-weight: bold;
-  text-transform: uppercase;
+.prestige-area {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px dashed #00bfff;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Button hover and click effects */
+.workshop-area {
+  margin-top: 20px;
+  padding: 15px;
+  border-top: 2px solid #ccc;
+  width: 100%;
+}
+
+/* --- Buttons --- */
+button {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Updated Transition */
+}
+
+#clickBtn {
+  padding: 0; /* Updated Padding */
+  font-size: 2.5rem;
+  background: radial-gradient(
+    circle,
+    #00bfff 0%,
+    #0077be 100%
+  ); /* Updated Background */
+  color: white;
+  border: 4px solid rgba(255, 255, 255, 0.2); /* Updated Border */
+  border-radius: 50%; /* Updated Shape */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Updated Shadow */
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 150px; /* Added Width */
+  height: 150px; /* Added Height */
+}
+
 #clickBtn:hover {
   background-color: #61d9fd;
+  box-shadow: 0 0 30px rgba(0, 191, 255, 0.8); /* Added Glow */
+  transform: scale(1.05); /* Added Scale */
 }
 
 #clickBtn:active {
   transform: scale(0.95);
 }
 
-#upgradeBtn {
-  margin-top: 25px;
+#upgradeBtn,
+#autoClickBtn {
   padding: 12px 30px;
   font-size: 1.1rem;
-  background-color: #0077be;
-  color: white;
-  border: 2px solid #87ceeb;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  border-radius: 10px; /* Updated Border Radius */
   font-weight: 600;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+#upgradeBtn {
+  background-color: #0077be;
 }
 
 #upgradeBtn:hover {
   background-color: #00bfff;
-  border-color: white;
   transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* 7. Auto-Popper Button Styling */
 #autoClickBtn {
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  background-color: #2e8b57; /* Sea Green */
-  color: white;
-  border: 2px solid #98fb98; /* Pale Green border */
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: #2e8b57;
+  margin-top: 15px;
 }
 
-/* Auto-Popper Hover State */
 #autoClickBtn:hover {
-  background-color: #3cb371; /* Lighter Green */
-  box-shadow: 0 0 15px #98fb98; /* Glowing effect */
+  background-color: #3cb371;
   transform: translateY(-2px);
 }
 
@@ -132,125 +140,265 @@ h3 {
   width: 350px;
   height: 180px;
   overflow-y: auto;
-
-  /* 1. Background & Border */
-  background: rgba(0, 119, 190, 0.2); /* Deep blue tint */
+  background: rgba(0, 119, 190, 0.2);
   border: 3px solid transparent;
-  /* Gradient Border technique */
   border-image: linear-gradient(to bottom, #00bfff, #0077be, #87ceeb) 1;
   border-radius: 15px;
-
-  /* 2. Glow Effects */
   box-shadow:
     0 0 15px rgba(0, 119, 190, 0.5),
-    /* Outer glow */ inset 0 0 10px rgba(255, 255, 255, 0.3); /* Inner shine */
-
+    inset 0 0 10px rgba(255, 255, 255, 0.3);
   padding: 20px;
   margin: 20px 0;
   display: flex;
   flex-direction: column;
   gap: 15px;
-
-  /* Smooth transition for any changes */
-  transition: all 0.3s ease;
 }
 
-/* 3. Sleeker Scrollbar */
-.upgrade-container::-webkit-scrollbar {
-  width: 10px;
-}
-
-.upgrade-container::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-.upgrade-container::-webkit-scrollbar-thumb {
-  background: #00bfff; /* Bright blue scrollbar */
-  border-radius: 10px;
-}
-
-.upgrade-container::-webkit-scrollbar-thumb:hover {
-  background: #61d9fd;
-}
-
-#upgradeBtn {
-  background-color: #0077be;
-  color: white;
-}
-
-#autoClickBtn {
-  background-color: #2e8b57; /* Sea Green */
-  color: white;
-}
-
-/* 8. Prestige Button Styling */
 #prestigeBtn {
   margin-top: 10px;
   padding: 15px 30px;
   font-size: 1.2rem;
-  background-color: #ffd700; /* Gold */
+  background: linear-gradient(
+    to right,
+    #ffd700,
+    #ff8c00
+  ); /* Updated Background */
   color: #333;
-  border: 2px solid #daa520; /* Darker Gold border */
+  border: 2px solid #daa520;
+  border-radius: 10px; /* Updated Border Radius */
+  font-weight: bold;
+}
+
+#prestigeBtn:hover {
+  background-color: #ffec8b;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* Added Glow */
+}
+
+#loadCustomBackground,
+#removeCustomBackground {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+}
+
+#loadCustomBackground {
+  background-color: #555;
+  color: white;
+  border: 2px solid #777;
+}
+
+#removeCustomBackground {
+  background-color: #d9534f;
+  color: white;
+  border: 2px solid #b52b27;
+  margin-left: 10px;
+}
+
+/* Achievements Button */
+#openAchievementsBtn {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: transparent; /* Updated Background */
+  color: #ff6347; /* Updated Color */
+  border: 2px solid #ff6347; /* Updated Border */
   border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+}
+
+#openAchievementsBtn:hover {
+  background-color: #ff6347; /* Updated Hover */
+  color: white; /* Updated Hover */
+  transform: translateY(-2px);
+}
+
+/* --- Standard Modal --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background: rgba(0, 20, 40, 0.95); /* Updated Background */
+  margin: 15% auto;
+  padding: 20px;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 119, 190, 0.8);
+  animation: modalFadeIn 0.5s;
+}
+
+/* --- Fullscreen Achievement Modal Styling --- */
+#achievements-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+}
+
+.modal-content-fullscreen {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 40px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.close-achievements {
+  color: #aaa;
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+.close-achievements:hover {
+  color: #fff;
+}
+
+/* Two-column layout */
+.achievements-sections {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.achievements-column {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.achievements-column h3 {
+  text-align: center;
+  border-bottom: 2px solid #444;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #aaa;
+}
+
+/* Individual Achievement Card */
+.achievement-card {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.achievement-card:hover {
+  transform: translateY(-3px);
+  border-color: #666;
+}
+
+.ach-details {
+  text-align: left;
+}
+
+.ach-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.ach-desc {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* Claim Button Styling */
+.claim-btn {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  transition: all 0.3s ease;
-  text-shadow: none; /* Make text sharper on gold */
+  transition: background-color 0.2s;
 }
 
-/* Prestige Hover State */
-#prestigeBtn:hover {
-  background-color: #ffec8b; /* Lighter Gold */
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+.claim-btn:hover {
+  background-color: #218838;
 }
 
-/* Prestige Display Text Styling */
-#prestigeDisplay {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffd700; /* Gold text */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+/* Locked Styling */
+.achievement-card.locked {
+  opacity: 0.6;
+  background-color: #222;
 }
 
+.achievement-card.locked .ach-name {
+  color: #888;
+}
+
+/* --- Fix Particle Positioning --- */
 #particle-container {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Allows clicking through particles */
-  z-index: 10;
+  pointer-events: none; /* Allows clicks to pass through to the button */
+  overflow: hidden;
+  z-index: 999; /* Ensures particles are on top */
 }
 
-/* The Particle Style */
 .particle {
   position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 2px solid rgba(255, 255, 255, 0.8);
   pointer-events: none;
-  z-index: 9999;
-
-  /* Changed to animation to use GPU acceleration */
-  animation: bubbleFloatSteam 1s ease-out forwards;
+  animation: particleFloat 1s forwards;
 }
 
-@keyframes bubbleFloatSteam {
+@keyframes particleFloat {
   0% {
+    transform: translate(0, 0);
     opacity: 1;
-    transform: translate(0, 0) scale(1);
   }
   100% {
+    transform: translate(var(--dx), var(--dy));
     opacity: 0;
-    /* Use var(--dx) and var(--dy) calculated in JS */
-    transform: translate(var(--dx), var(--dy)) scale(0.5);
   }
 }
 
-/* --- ADD THIS FOR SCREEN SHAKE --- */
 @keyframes shake {
   0% {
     transform: translate(1px, 1px) rotate(0deg);
@@ -289,8 +437,8 @@ h3 {
 
 .shake-animation {
   animation: shake 0.5s;
-  animation-iteration-count: 1;
 }
+
 .fade-in-text {
   animation: fadeInAnimation 1s forwards;
 }
@@ -304,34 +452,6 @@ h3 {
   }
 }
 
-/* Modal Container */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
-}
-
-/* Modal Content Box */
-.modal-content {
-  background: linear-gradient(to bottom, #00bfff, #0077be);
-  margin: 15% auto;
-  padding: 20px;
-  border: 3px solid #fff;
-  border-radius: 15px;
-  width: 80%;
-  max-width: 400px;
-  text-align: center;
-  color: white;
-  font-family: "Arial", sans-serif;
-  box-shadow: 0 0 20px rgba(0, 119, 190, 0.8);
-  animation: modalFadeIn 0.5s;
-}
-
 @keyframes modalFadeIn {
   from {
     top: -300px;
@@ -343,68 +463,7 @@ h3 {
   }
 }
 
-/* Close Button */
-.close-button {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.close-button:hover {
-  color: white;
-}
-
-/* Big button inside the modal */
-#close-modal-btn {
-  background-color: #008b8b;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-.prestige-area {
-  margin-top: 30px;
-  padding: 20px;
-  border: 2px dashed #00bfff;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.achievements-area {
-  margin-top: 30px;
-  padding: 15px;
-  border: 2px solid #ffd700;
-  border-radius: 10px;
-  background-color: rgba(255, 215, 0, 0.2);
-  color: white;
-  text-align: center;
-  width: 100%; /* Spans container width */
-}
-
-.achievement-unlocked {
-  color: #ffd700;
-  font-weight: bold;
-  margin: 5px 0;
-  animation: popIn 0.5s ease;
-}
-
-@keyframes popIn {
-  0% {
-    transform: scale(0);
-  }
-  80% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
+/* --- Responsiveness --- */
 @media (max-width: 480px) {
   .container {
     padding: 10px;
@@ -421,26 +480,42 @@ h3 {
   }
 }
 
-.workshop-area {
+#close-modal-btn {
   margin-top: 20px;
-  padding: 15px;
-  border-top: 2px solid #ccc; /* Separator line */
-  width: 100%;
-}
-
-#loadCustomBackground {
-  margin-top: 10px;
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #555; /* Neutral color for workshop */
+  background-color: #00bfff;
   color: white;
-  border: 2px solid #777;
-  border-radius: 20px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.3s;
 }
 
-#loadCustomBackground:hover {
-  background-color: #777;
-  transform: translateY(-2px);
+#close-modal-btn:hover {
+  background-color: #0077be;
+}
+
+#milestone-banner {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #4b0082, #00bfff);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    top: -50px;
+  }
+  to {
+    top: 10px;
+  }
 }

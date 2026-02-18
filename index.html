@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="particle-container"></div>
+    <div id="milestone-banner" style="display:none;"></div>
 
     <div class="container">
       <h1 id="title">🌊 Ocean Clicker 🌊</h1>
@@ -28,16 +29,33 @@
         <p id="prestigeDisplay">Prestige Points: 0</p>
       </div>
 
-      <div class="achievements-area">
-        <h3>🏆 Achievements 🏆</h3>
-        <div id="achievementsList">No achievements yet!</div>
+      <button id="openAchievementsBtn">🏆 Achievements 🏆</button>
+
+      <div id="achievements-modal" class="modal">
+        <div class="modal-content-fullscreen">
+          <span class="close-achievements">&times;</span>
+          <h2 class="menu-title">🏆 Achievement Log 🏆</h2>
+
+          <div class="achievements-sections">
+            <div class="achievements-column">
+              <h3>Unlocked</h3>
+              <div id="unlockedList" class="achievement-list"></div>
+            </div>
+            <div class="achievements-column">
+              <h3>Locked</h3>
+              <div id="lockedList" class="achievement-list"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="workshop-area">
         <h3>🛠️ Workshop 🛠️</h3>
         <button id="loadCustomBackground">Load Custom Theme</button>
+        <button id="removeCustomBackground">Remove Custom Theme</button>
       </div>
     </div>
+
     <div id="offline-modal" class="modal">
       <div class="modal-content">
         <span class="close-button">&times;</span>
